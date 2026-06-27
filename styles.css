@@ -10,6 +10,7 @@ body{
     animation:changeColor 12s ease infinite;
     min-height: 100vh;
        background-color: #1a2033;
+       overflow-x: hidden;
        
 }
 .navBar{
@@ -80,7 +81,7 @@ body{
         flex-direction: column;
         gap:20px;
         padding: 8px;
-      background: rgb(22 15 37 / 89%)
+    background: rgb(36 43 60 / 70%)
 
     }
     #navlinks.active{  /*to active it in js*/
@@ -316,7 +317,7 @@ animation:goldMove 6s linear infinite;
     animation: fadeSlide 2s ease forwards;}
 .text{
        font-family:"Montserrat", sans-serif;
-            line-height: 1.7;
+            line-height: 1.8;
             font-weight: 600;
             font-size: 25px;
             font-family: "Inter", sans-serif;
@@ -338,6 +339,7 @@ animation:goldMove 6s linear infinite;
 @media(max-width:600px){
     .text{
         font-size: 19px;
+        line-height: 1.9;
     }
 }
 .skills-container h3{
@@ -417,6 +419,7 @@ h3{
              font-size: 20px;
                  word-wrap: break-word;
                  align-items: center;
+                 letter-spacing: 1px;
         }
 
 
@@ -467,8 +470,8 @@ h3{
 
 @media(max-width:600px){
     .softskills-container .code-container .card{
-        width:148px;
-        height:200px;
+        width:138px;
+        height:180px;
       
     }
 }
@@ -626,7 +629,7 @@ h3{
 
       .softskills-container .code-container .card .card-title {
         
-            font-weight: 700;
+           /* font-weight: 700;
             background: linear-gradient(90deg,
                     #4A00E0,
                     #c4e22d,
@@ -637,7 +640,13 @@ h3{
             animation: galaxyMove 9s ease infinite;
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
+            color: transparent;*/
+            color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    word-wrap: break-word;
+    align-items: center;
+    letter-spacing: 1px;
       
 
         }
@@ -701,12 +710,16 @@ h3{
     align-items: center;
     text-align: center;
     gap: 20px;
+    overflow: hidden;
+
     
 }
 
 
 .certificate-container{
     perspective: 1000px;
+    overflow: hidden; /*===========================>new*/
+    position: relative;
 }
 .certificate-card{
     width:400px;
@@ -726,7 +739,7 @@ h3{
 }
 
 .certificate-card img{
-
+max-width: 320px;
     width: 100%;
     height: 100%;
     object-fit:contain;
@@ -782,6 +795,7 @@ h3{
             -webkit-text-fill-color: transparent;
             color: transparent;
             letter-spacing: 3px;
+          font-family: 'Montserrat', sans-serif;
 }
 .certificate-card .active{
     transform: rotateY(180deg);}
@@ -804,6 +818,7 @@ h3{
     font-size: 25px;
     font-family: "Momo Trust Sans", sans-serif;
     font-weight: 600;
+    line-height: 1.8;
     color: transparent;
     background: linear-gradient(rgb(74, 0, 224), rgb(196, 226, 45), rgb(255, 110, 196), rgb(72, 198, 239), rgb(111, 134, 214)) 0% 0% / 400% 400% text;
     animation: 8s ease 0s infinite normal none running galaxyMove;
@@ -999,122 +1014,287 @@ h3{
     .project-carousel .right1 { transform: translateX(55px) rotateY(-20deg) scale(0.8); }
     .project-carousel .right2 { transform: translateX(100px) rotateY(-20deg) scale(0.65); opacity: 0.4; }
 }
-*/
+
 
 /* Base Layout Settings */
+
+
+
+/* Container holding the carousel and buttons */
+/* Container holding the carousel */
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    /* Mobile First: minimal padding so the carousel is as wide as possible */
+    padding: 0 10px; 
+}
+
+/* The window that hides the overflowing images */
 .project-carousel {
-    position: relative;
-    width: 40%;
-    height: 330px;
-    margin: 0 auto 120px auto; /* Added large bottom margin to clear the absolute elements */
-    perspective: 1500px;
-    padding-top: 70px;
-}
-
-.project-carousel img {
-    position: absolute;
+    overflow: hidden;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 3D Positioning States */
-.project-carousel .center {
-    transform: translateX(0) scale(1);
-    z-index: 7;
+/* The long row holding all the images */
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
 }
 
-.project-carousel .left1 {
-    transform: translateX(-200px) rotateY(25deg) scale(0.9);
-    z-index: 4;
-    opacity: 0.9;
+/* Responsive Image Width Logic */
+.carousel-track img {
+    width: 100%; /* Mobile: Take up 100% of the available width */
+    flex-shrink: 0;
+    height: auto;
+    /* Mobile First: minimal gaps between slides so they stay large */
+    padding: 0 5px; 
+    box-sizing: border-box;
+    object-fit: contain; /* Ensures the screenshots don't get cropped vertically */
 }
 
-.project-carousel .left2 {
-    transform: translateX(-400px) rotateY(25deg) scale(0.8);
-    z-index: 2;
-    opacity: 0.7;
-}
+/* --- RESPONSIVE BREAKPOINTS --- */
 
-.project-carousel .right1 {
-    transform: translateX(200px) rotateY(-25deg) scale(0.9);
-    z-index: 3;
-    opacity: 0.9;
-}
-
-.project-carousel .right2 {
-    transform: translateX(400px) rotateY(-25deg) scale(0.8);
-    z-index: 2;
-}
-
-/* Hide extra background images seamlessly */
-.project-carousel .right3, 
-.project-carousel img:not([class]) {
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* Description text fixes */
-.descripe {
-    position: relative;
-    z-index: 10;
-    clear: both;
-    text-align: center;
-    margin-top: 20px;
-    line-height: 1.6;
-}
-
-
-/* ==========================================================================
-   Media Queries for Responsiveness
-   ========================================================================== */
-
-/* For Tablets (Screens 1024px and below) */
-@media (max-width: 1024px) {
-    .project-carousel {
-        width: 55%;
-        height: 280px;
-        margin-bottom: 90px; /* Adjust layout gap */
+/* Tablet Screens (600px and up) */
+@media (min-width: 600px) {
+    .carousel-container {
+        padding: 0 40px; /* Give back room for buttons on larger screens */
     }
-    
-    .project-carousel .left1  { transform: translateX(-130px) rotateY(25deg) scale(0.85); }
-    .project-carousel .left2  { transform: translateX(-260px) rotateY(25deg) scale(0.7); }
-    .project-carousel .right1 { transform: translateX(130px) rotateY(-25deg) scale(0.85); }
-    .project-carousel .right2 { transform: translateX(260px) rotateY(-25deg) scale(0.7); }
+    .carousel-track img {
+        padding: 0 10px;
+    }
 }
 
-/* For Mobile Phones (Screens 600px and below) */
-@media (max-width: 600px) {
-    .project-carousel {
-        width: 74%;
-        height: 200px;
-        margin-bottom: 70px; /* Tighter margins for mobile screens */
-        perspective: 800px;
+/* Desktop Screens (1024px and up) */
+@media (min-width: 1024px) {
+    .carousel-container {
+        padding: 0 60px;
+        margin: 30px auto;
     }
-    
-    .project-carousel .left1  { transform: translateX(-55px) rotateY(20deg) scale(0.8); }
-    .project-carousel .left2  { transform: translateX(-100px) rotateY(20deg) scale(0.65); opacity: 0.4; }
-    .project-carousel .right1 { transform: translateX(55px) rotateY(-20deg) scale(0.8); }
-    .project-carousel .right2 { transform: translateX(100px) rotateY(-20deg) scale(0.65); opacity: 0.4; }
-
-    .descripe {
-        font-size: 14px;
+    .carousel-track img {
+        width: 50%; /* 2 large slides on desktop */
         padding: 0 15px;
-        br { display: none; } /* Removes hard line breaks on tiny screen widths */
+    }
+    .project-carousel {
+        border-radius: 12px;
     }
 }
 
-.descripe-container{
-     display: flex;
-    flex-direction: column;
-    width: 100%!important;
+/* Navigation Buttons styled to sit nicely on both mobile and desktop */
+.carousel-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 22px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Subtle adjustment for desktop buttons */
+@media (min-width: 1024px) {
+    .carousel-btn {
+        font-size: 28px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+    transform: scale(1.1);
+}
+
+/* On mobile, buttons sit slightly over the image edges safely */
+.prev-btn { left: 5px; }
+.next-btn { right: 5px; }
+
+/* Description Container */
+.descripe-container {
     text-align: center;
-      background-color: rgba(0,0,0,0.1);
-    border-radius:20px;
-     color:#d8b36b;
-     font-family: 'Montserrat', sans-serif;
-     font-size: 20px;
-        
-   
+    margin-top: 25px;
+    padding: 0 20px;
+        background-color: rgba(0,0,0,0.1);
+    border-radius:13px;
+
+}
+.descripe{
+        color:#d8b36b;
+        font-family:'Montserrat',sans-serif;
+        line-height: 2;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 1px;
+}
+
+.button{
+    display:inline-block;
+    padding:15px 35px;
+    background: linear-gradient(135deg,#f9e29c,#d4af37,#b8860b);
+    color:#1a1a1a;
+    font-size: 16px;
+    font-weight: 600;
+    border:1px solid rgba(255,215,0,0.4);
+    cursor:pointer;
+ 
+    border-radius: 15px;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(212,175,55,0.3),
+    0 8px 20px rgba(0,0,0,0.35);
+    transition: all 0,3s ease ;
+    margin-bottom: 20px;
+}
+.button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255,215,0,0.5),
+    0 12px 25px rgba(0,0,0,0.4);
+
+}
+.button:active{
+    transform: scale(0.97);
+    
+}
+@media(max-width:700px){
+    .descripe{
+        font-size: 15px;
+    }
+
+}
+
+@media(max-width:600px){
+    .button{
+        padding: 15px 30px;
+    }
+}
+
+@media(max-width:600px){
+    .card{
+        width:120px;
+        height:160px;
+    }
+    .card img {
+        width: 80px;
+    }
+    .card-title {
+        font-size: 16px;
+        font-weight: 500;
+
+}
+.softskills-container .code-container .card .card-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+}
+
+.random-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+    gap:60px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+.project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+h4{
+     font-size: 30px;
+     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(221, 191, 21, 0.5);
+            background: linear-gradient(90deg,
+                    #fff7d6,
+                    #e6c988,
+                    #f7e9b5,
+                    #d8b36b,
+                    #fff7d6, );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            /*i add this just to remove the error on line 74 (-webkit-background-clip)*/
+            -webkit-text-fill-color: rgb(215, 206, 151);
+            text-shadow: 2px 2px 5px rgba(255, 165, 0, 0.5),
+                -2px -2px 5px rgba(218, 153, 61, 0.4);
+            background: linear-gradient(to right, #fff7d6 0%,
+                    #e6c988 40%,
+                    #d8b36b 70%,
+                    #fff7d6 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            margin-bottom:10px;
+                font-family: Montserrat, sans-serif;
+}
+
+@media(max-width:780px){
+    .project img{
+        width:100%;
+        max-width: 320px;
+        height: 350px;
+    }
+    .project iframe{
+        width:320px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .certificate-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certificate-container {
+        width: 90%;
+    }
+
+    .certificate-card {
+        width: 100%;
+        height: 250px;
+    }
+
+    .certificate-card img {
+        max-width: 100%;
+    }
+
+    .certificates-container h3 {
+        font-size: 28px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-card {
+        width: 100%;
+        height: 220px;
+    }
+
+    .back span {
+        font-size: 16px;
+    }
+}
+
+@media(max-width:650px){
+    .my-first-project h3{
+        font-size: 35px;
+    }
 }
