@@ -67,7 +67,7 @@ body{
     display: flex;
     z-index: 999;
  }
-@media(max-width:600px){
+@media(max-width:800px){
     .humburger{
         display: flex;
     }
@@ -81,7 +81,7 @@ body{
         flex-direction: column;
         gap:20px;
         padding: 8px;
-    background: rgb(36 43 60 / 70%)
+    background: rgb(36 43 60 / 1)
 
     }
     #navlinks.active{  /*to active it in js*/
@@ -261,14 +261,14 @@ animation:goldMove 6s linear infinite;
 
 @media(max-width:600px){
     .home-icon a i{
-        font-size: 30px;
+        font-size: 40px;
     }
 }
 
 .about{
     display: flex;
     flex-direction: column;
-    padding: 140px;
+    padding: 100px 140px 140px;
    
 }
 
@@ -298,6 +298,16 @@ animation:goldMove 6s linear infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
+            letter-spacing: 2px;
+
+
+}
+
+@media(max-width:900px){
+     .about{
+        padding: 50px 100px 100px;
+        margin-top: 40px;
+    }
 
 }
 @media(max-width:600px){
@@ -306,7 +316,7 @@ animation:goldMove 6s linear infinite;
         margin-top: 40px;
     }
     .about h2{
-        font-size: 45px;
+        font-size: 33px;
     }
    
 }
@@ -338,13 +348,13 @@ animation:goldMove 6s linear infinite;
 }
 @media(max-width:600px){
     .text{
-        font-size: 19px;
+        font-size: 15px;
         line-height: 1.9;
     }
 }
 .skills-container h3{
   font-family: 'Montserrat', sans-serif;
-            font-size: 40px;
+            font-size: 30px;
             margin-top:60px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(221, 191, 21, 0.5);
             background: linear-gradient(90deg,
@@ -368,8 +378,18 @@ animation:goldMove 6s linear infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
+            letter-spacing: 2px;
            
 }
+  @media(max-width: 600px) {
+            .skills-container h3 {
+                font-size:25px;
+            }
+        
+            
+        }
+
+
 
 h3{
     text-align: center;
@@ -413,6 +433,8 @@ h3{
         }
 
 
+      
+
         .card-title{
              color: white;
              font-family: 'Montserrat', sans-serif;
@@ -434,7 +456,7 @@ h3{
 
 .softskills-container h3{
      font-family: 'Montserrat', sans-serif;
-            font-size: 40px;
+            font-size: 30px;
             margin-top:60px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(221, 191, 21, 0.5);
             background: linear-gradient(90deg,
@@ -458,8 +480,19 @@ h3{
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
+            letter-spacing: 2px;
 
 }
+  @media(max-width: 600px) {
+            .softskills-container h3 {
+                font-size:25px;
+            }
+        
+            
+        }
+
+
+
 
 
 .softskills-container .code-container .card{
@@ -470,8 +503,8 @@ h3{
 
 @media(max-width:600px){
     .softskills-container .code-container .card{
-        width:138px;
-        height:180px;
+        width:135px;
+        height:170px;
       
     }
 }
@@ -666,18 +699,11 @@ h3{
         }
 
 
-        @media(max-width: 600px) {
-            .skills-container h3 {
-                font-size:40px;
-            }
-        
-            
-        }
-
+      
 
         .certificates-container h3{
              font-family: 'Montserrat', sans-serif;
-            font-size: 40px;
+            font-size: 30px;
             margin-top:60px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(221, 191, 21, 0.5);
             background: linear-gradient(90deg,
@@ -701,7 +727,16 @@ h3{
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
+            letter-spacing: 2px;
         }
+
+@media(max-width:600px){
+     .certificates-container h3{
+        font-size:25px
+
+     }
+
+}
 
         .certificate-grid{
     display: flex;
@@ -712,6 +747,8 @@ h3{
     gap: 20px;
     overflow: hidden;
 
+
+
     
 }
 
@@ -720,6 +757,9 @@ h3{
     perspective: 1000px;
     overflow: hidden; /*===========================>new*/
     position: relative;
+
+
+
 }
 .certificate-card{
     width:400px;
@@ -729,6 +769,7 @@ h3{
     transition: transform 0.6s ease;
     cursor:pointer;
     transform: rotateY(0deg);
+
 
 
      
@@ -806,7 +847,7 @@ max-width: 320px;
     width: 100% ;
     text-align: center;
      background-color: rgba(0,0,0,0.5);
-    border-radius:20px;
+   
    
    
 }
@@ -815,22 +856,19 @@ max-width: 320px;
 
     line-height: 2;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     font-family: "Momo Trust Sans", sans-serif;
     font-weight: 600;
-    line-height: 1.8;
+
     color: transparent;
     background: linear-gradient(rgb(74, 0, 224), rgb(196, 226, 45), rgb(255, 110, 196), rgb(72, 198, 239), rgb(111, 134, 214)) 0% 0% / 400% 400% text;
     animation: 8s ease 0s infinite normal none running galaxyMove;
   font-family:'Montserrat',sans-serif;
   padding:50px 50px 0;
+  letter-spacing: 1px;
    
 }
-@media(max-width:700px){
-    .quote-text{
-        font-size:18px;
-    }
-}
+
 .quote-author{
    /* font-size: 20px;
     font-family: "Momo Trust Sans", sans-serif;
@@ -843,13 +881,23 @@ max-width: 320px;
     font-family:'Italianno',cursive;
   margin:0;
   padding-bottom:50px;
+  letter-spacing: 2px;
+}
+@media(max-width:700px){
+    .quote-text{
+        font-size:15px;
+    }
+    .quote-author{
+        font-size: 20px;
+    }
+    
 }
 
 
 .projects{
     display: flex;
     flex-direction: column;
-    padding: 140px;
+    padding: 100px 140px 0px;
    
 }
 
@@ -887,7 +935,7 @@ max-width: 320px;
         margin-top: 40px;
     }
     .projects h2{
-        font-size: 45px;
+        font-size: 33px;
     }
    
 }
@@ -900,7 +948,7 @@ max-width: 320px;
     
 .my-first-project{
   font-family: 'Montserrat', sans-serif;
-            font-size: 40px;
+            font-size: 30px;
             margin-top:60px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(221, 191, 21, 0.5);
             background: linear-gradient(90deg,
@@ -1016,12 +1064,7 @@ h3{
 }
 
 
-/* Base Layout Settings */
-
-
-
-/* Container holding the carousel and buttons */
-/* Container holding the carousel */
+*/
 .carousel-container {
     position: relative;
     display: flex;
@@ -1139,7 +1182,7 @@ h3{
         letter-spacing: 1px;
 }
 
-.button{
+/*.button{
     display:inline-block;
     padding:15px 35px;
     background: linear-gradient(135deg,#f9e29c,#d4af37,#b8860b);
@@ -1148,6 +1191,14 @@ h3{
     font-weight: 600;
     border:1px solid rgba(255,215,0,0.4);
     cursor:pointer;
+    background: linear-gradient(t0 right,#fff7d6,#d8b36b);
+    color:#1a2033;
+    border: 2px solid gold;
+    color:gold;
+    border-radius: 30px;
+      font-family:'Montserrat',sans-serif;
+
+
  
     border-radius: 15px;
     text-decoration: none;
@@ -1165,10 +1216,43 @@ h3{
 .button:active{
     transform: scale(0.97);
     
+}*/
+.button {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(to right, #fff7d6, #d8b36b);
+    color: #1a2033;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4),
+                0 8px 20px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    font-weight: 700;
 }
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.6),
+                0 8px 25px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to right, #d8b36b, #fff7d6);
+}
+
 @media(max-width:700px){
     .descripe{
         font-size: 15px;
+    }
+    .button{ 
+         padding: 15px 20px;
+         font-size: 12px;
+
     }
 
 }
@@ -1181,11 +1265,11 @@ h3{
 
 @media(max-width:600px){
     .card{
-        width:120px;
+        width:115px;
         height:160px;
     }
     .card img {
-        width: 80px;
+        width: 70px;
     }
     .card-title {
         font-size: 16px;
@@ -1218,7 +1302,7 @@ h3{
 }
 
 h4{
-     font-size: 30px;
+     font-size: 25px;
      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(221, 191, 21, 0.5);
             background: linear-gradient(90deg,
                     #fff7d6,
@@ -1249,11 +1333,11 @@ h4{
     .project img{
         width:100%;
         max-width: 320px;
-        height: 350px;
+        height: 440px;
     }
     .project iframe{
         width:320px;
-        height: 350px;
+        height: 440px;
     }
 }
 
@@ -1261,6 +1345,7 @@ h4{
     .certificate-grid {
         flex-direction: column;
         align-items: center;
+        margin-bottom: 40px;
     }
 
     .certificate-container {
@@ -1276,10 +1361,6 @@ h4{
         max-width: 100%;
     }
 
-    .certificates-container h3 {
-        font-size: 28px;
-        margin-top: 30px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1293,8 +1374,271 @@ h4{
     }
 }
 
-@media(max-width:650px){
+@media(max-width:600px){
     .my-first-project h3{
-        font-size: 35px;
+        font-size: 25px;
     }
 }
+
+.contact {
+
+    text-align: center;
+    margin-top:100px;
+}
+@media(max-width:600px){
+    .contact{padding: 20px;
+        margin-top: 40px;}
+}
+
+/*.contact-title {
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    /*background: linear-gradient(to right, #fff7d6, #d8b36b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+
+}   I delete this class ,but in case i want to retrive it */
+
+.contact-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 18px;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 20px;
+    padding: 25px 30px;
+    width: 300px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+.contact-container h2{
+       font-family: 'Montserrat', sans-serif;
+            font-size: 50px;
+            margin:0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(221, 191, 21, 0.5);
+            background: linear-gradient(90deg,
+                    #fff7d6,
+                    #e6c988,
+                    #f7e9b5,
+                    #d8b36b,
+                    #fff7d6, );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            /*i add this just to remove the error on line 74 (-webkit-background-clip)*/
+            -webkit-text-fill-color: rgb(215, 206, 151);
+            text-shadow: 2px 2px 5px rgba(255, 165, 0, 0.5),
+                -2px -2px 5px rgba(218, 153, 61, 0.4);
+            background: linear-gradient(to right, #fff7d6 0%,
+                    #e6c988 40%,
+                    #d8b36b 70%,
+                    #fff7d6 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+
+}
+#contact h2 span {
+    display: inline-block;
+    border-bottom: 3px solid #d8b36b;
+    padding-bottom: 15px;
+}
+
+.contact-card:hover {
+    transform: translateX(10px);
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+}
+
+.contact-icon {
+    font-size: 30px;
+}
+
+.contact-card h3 {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: gold;
+    margin-bottom: 4px;
+}
+
+.contact-card p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width:370px;
+    justify-content: center;
+    max-width: 100%;
+}
+@media(max-width:600px){
+    .contact-card{
+        width:260px;
+        max-width: 100%;
+    }
+    .contact-container h2{
+        font-size: 33px;
+    }
+    .contact-form-wrapper{
+        width: 330px;
+        max-width: 100%;
+    }
+
+
+
+}
+
+
+.contact-input, .contact-textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 12px;
+    padding: 15px 20px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.contact-input:focus, .contact-textarea:focus {
+    border-color: gold;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+}
+
+.contact-textarea {
+    height: 150px;
+    resize: none;
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+  
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 60px 20px 20px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    background: linear-gradient(to right, #fff7d6, #d8b36b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+
+.footer-tagline {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    color: gold;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer-links,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a,
+.footer-social a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: gold;
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+@media(max-width:600px){
+    .footer-links ,.footer-social{
+        display: none;
+    }
+}
+
