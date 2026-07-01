@@ -1,1 +1,7 @@
 const humburger=document.querySelector(".humburger"),navlinks=document.querySelector("#navlinks");humburger.addEventListener("click",()=>{navlinks.classList.toggle("active")});const carousels=document.querySelectorAll(".carousel-container");carousels.forEach(e=>{let t=e.querySelector(".carousel-track"),r=e.querySelector(".next-btn"),n=e.querySelector(".prev-btn"),o=e.querySelectorAll(".carousel-track img"),s=0;function c(){return o[0].getBoundingClientRect().width}function l(){let e=c();t.style.transform=`translateX(${-s*e}px)`}r.addEventListener("click",()=>{let e=window.innerWidth>=1024?2:1;s>=o.length-e?s=0:s++,l()}),n.addEventListener("click",()=>{let e=window.innerWidth>=1024?2:1;s<=0?s=o.length-e:s--,l()}),window.addEventListener("resize",l)});const form=document.querySelector(".contact-form-wrapper");form.addEventListener("submit",async e=>{e.preventDefault();let t=new FormData(form),r=Object.fromEntries(t.entries());try{let n=await fetch("https://formspree.io/f/mgojyrje",{method:"POST",body:JSON.stringify(r),headers:{"Content-Type":"application/json",Accept:"application/json"}});n.ok?(alert("Message sent successfully! ✨"),form.reset()):alert("Oops! There was a problem submitting your form.")}catch(o){console.error("Error submitting form:",o)}});
+const loader=document.getElementById("preloader")
+window.addEventListener("load",hidePreLoader);
+function hidePreLoader(){
+    loader.style.display="none";
+    
+}
